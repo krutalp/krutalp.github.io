@@ -228,7 +228,7 @@
                     <p>I'll meet you there</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>5:00 PM - Mercer Labs</h3>
+                    <h3>5:10 PM - Mercer Labs</h3>
                     <p>21 Dey Street, Financial District<br>
                     <a href="https://tickets.mercerlabs.com/event/maestros-and-the-machines-h3a6ne" target="_blank" style="color: #667eea; font-weight: bold;">View Event Details →</a></p>
                 </div>
@@ -251,28 +251,6 @@
             response.innerHTML = "🎉 Yay! ";
             buttons.style.display = 'none';
             planSection.classList.add('show');
-            
-            // Create celebration hearts
-            for (let i = 0; i < 15; i++) {
-                setTimeout(() => {
-                    const heart = document.createElement('div');
-                    heart.innerHTML = '💙';
-                    heart.style.position = 'fixed';
-                    heart.style.left = Math.random() * 100 + 'vw';
-                    heart.style.top = '100vh';
-                    heart.style.fontSize = '30px';
-                    heart.style.zIndex = '1000';
-                    heart.style.transition = 'all 2s ease-out';
-                    document.body.appendChild(heart);
-                    
-                    setTimeout(() => {
-                        heart.style.top = '-100px';
-                        heart.style.opacity = '0';
-                    }, 100);
-                    
-                    setTimeout(() => heart.remove(), 2100);
-                }, i * 100);
-            }
         }
 
         function sayNo() {
