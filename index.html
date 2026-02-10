@@ -1,210 +1,290 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<title>KRUTAL PATEL</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Invitation </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 30px;
+            padding: 60px 40px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 10;
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .big-heart {
+            font-size: 80px;
+            animation: heartbeat 1.5s infinite;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        h1 {
+            color: #667eea;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .subtitle {
+            color: #764ba2;
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .message {
+            color: #555;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .details {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+        }
+
+        .details h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .detail-item {
+            font-size: 1.1rem;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .detail-item span {
+            font-size: 1.5rem;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #0530f4 0%, #4697f4 100%);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.6);
+        }
+
+        .btn.no {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .response {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: bold;
+            min-height: 40px;
+        }
+
+
+
+        .plan-section {
+            display: none;
+            animation: fadeIn 0.8s ease-in;
+        }
+
+        .plan-section.show {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .timeline {
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .timeline-item {
+            background: rgba(102, 126, 234, 0.1);
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 15px;
+            border-left: 5px solid #667eea;
+        }
+
+        .timeline-item h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 40px 20px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="big-heart">💙</div>
+        <h1>You're Invited!</h1>
+        <p class="subtitle"></p>
+        
+        <div class="message">
+            <p></p>
+            <p>To: Catherine Tom</p>
+        </div>
 
+        <div class="details">
+            <h2> The Plan  </h2>
+            <div class="detail-item">
+                <span>📅</span>
+                <div>February 14th, 2026</div>
+            </div>
+            <div class="detail-item">
+                <span>🕐</span>
+                <div>5:00 PM</div>
+            </div>
+            <div class="detail-item">
+                <span>🎬 </span>
+                <div> Mercer Labs </div>
+            </div>
+            <div class="detail-item">
+                <span>🍽️</span>
+                <div> Dinner </div>
+            </div>
+        </div>
 
+        <div id="buttons">
+            <button class="btn" onclick="sayYes()">Yes</button>
+            <button class="btn no" onclick="sayNo()">Nah</button>
+        </div>
 
-![](https://komarev.com/ghpvc/?username=krutalp&style=flat&color=blue)
+        <div class="response" id="response"></div>
 
-<h1 align="center">Hi there,  I'm Krutal! <img src=
-"https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"></h1>
-
-<div align="center" style="border: px solid #000000;>   
-
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Robot-Bold&size=30&color=&center=true&vCenter=true&width=900&height=110&lines=Statistics+Student+@+Johns+Hopkins+University;Data+Science+Intern+@+Disney;Researcher+@+Johns+Hopkins+University;)](https://git.io/typing-svg)
-</div>
-
-
-## <img src="https://c.tenor.com/NCRHhqkXrJYAAAAi/programmers-go-internet.gif" width="25">  <b>About Me</b>
-- 🔭 I’m currently a Decision Science Intern at Disney, working on Media Research projects (ESPN, ABC, FX, Disney Chanel)
-- 📚 I'm a recent grad from Johns Hopkins University and an incoming masters student at GeorgiaTech
-- 📒 Research Interests: Large Scale Network Analytics; Data Engineering pipelines; GenAI applications in Media Landscapes
-- 🌱 I’m currently learning Computational Graph Theory, Numerical Analysis
-- 👯 I’m looking to collaborate on Data Science and Analytics Projects
-- 📫 How to reach me: kpate111@jhu.edu
-- 😄 Pronouns: He/Him/His
-  
-## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="25"> <b>Github Stats</b>
-
-<p align="center"><img width="460" height="150" src="https://github-readme-streak-stats.herokuapp.com/?user=krutalp&theme=tokyonight&&fire=FF801F&currStreakNum=FFBE69&currStreakLabel=FFBE69"/460/300"></p>
-
-## <img  src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width ="25"><b> Skills</b>
-
-### 📋 Programming languages
-
-<p align="left"> 
- 
-  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank"> 
-    <img alt="JavaScript" src="https://img.shields.io/badge/JavaScript-%23F7DF1E.svg?logo=javascript&logoColor=black">
-  </a>
-
-  <a href="https://www.python.org" target="_blank">
-    <img alt="Python" src="https://img.shields.io/badge/Python-%2314354C.svg?logo=python&logoColor=white">
-  </a>
-
-</p>
-
-
-### 📋 Frontend Development
-
-<p align="left">
-  <a href="https://reactjs.org" target="_blank">
-    <img alt="React" src="https://img.shields.io/badge/React-%2361DAFB.svg?logo=react&logoColor=white">
-  </a>
-
-  <a href="https://www.w3.org/html/" target="_blank"> 
-   <img alt="HTML" src="https://img.shields.io/badge/HTML5-%23E34F26.svg?logo=html5&logoColor=white">
-  </a>   
-
-
-</p>
-
-  
-  
-<!-- Navbar (sit on top) -->
-<div class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
-    <a href="#home" class="w3-bar-item w3-button"><b>Krutal</b> Patel</a>
-    <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
-      <a href="#about" class="w3-bar-item w3-button">About</a>
-      <a href="#projects" class="w3-bar-item w3-button">Projects</a>
-      <a href="#contact" class="w3-bar-item w3-button">Contact</a>
-    </div>
-  </div>
-</div>
-
-<!-- Header -->
-<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="baltimore.jpg" alt="Baltimore, MD" width="1500" height="50" style="opacity:0.4;filter:alpha(opacity=40);"/>
-  <div class="w3-display-middle w3-margin-top w3-center">
-    <h1 class="w3-xlarge w3-text-black"><span class="w3-padding w3-white w3-opacity-min"><font size="2000">Krutal Patel</font></span> 
-  </div>
-</header>
-
-<!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
- 
-<!-- About Section -->
-<div class="w3-container w3-padding-32" id="about">
-  <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About</h3>
-  <p>Hello! My name is Krutal and I am an undergraduate student at Johns Hopkins University studying Applied Mathematics and Statistics, and Computer Science. 
-    I hope to pursue a career in Data Science and Mathematical Modeling after graduation. My current research interests include Computational Graph Theory and Machine Learning.
-    Thank you for visiting my project portfolio site! You can scroll below to see some of my most exciting Data Science and Research Projects. 
-  </p>
-</div>
-
-  <!-- Project Section -->
-  <div class="w3-container w3-padding-100" id="projects">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Projects</h3>
-
-    <div class="row">
-    <div class="col-md-6"> 
-    <font size="+1">Breast Cancer Histopathology Classification Project.</font>
-    <p>Project poster: <a href="wse_proj.pdf">Click Me</a>.</p>
-    <img style='border:1px solid #000000' src="wse_proj.jpg" 
-     width="700" 
-     height="500" />
-    <br>
-    <br>
-    <font size="+1"> Description: </font>
-    <br>
-    <br>
-    <font size="-1"> Breast Cancer Histopathology Database (BreakHis), developed by the UFPR, is comprised of over 9,000 histopathological images of Breast Cancer Tissue collected from over 80 patients. 
-      In this project, we extract histopathological images of only 40x magnification. We developed a scalable, to-production, 
-      classification algorithm to predict tumor type (benign or malignant) of the image.</font>
-
-    <br>
-    <br>
-    <font size="+1"> Deliverables: </font>
-    <br>
-    <br>
-    <font size="'-1"> 1. Research Conference Presentation at Design Day 2022  <a href="https://designday.jhu.edu/design-day-projects-2022/entry/12644/">Click Me</a>.    </font>
-    <br>
-    <font size="'-1"> 2. Newsletter Publication: <a href="https://engineering.jhu.edu/ams/news/undergraduate-students-investigate-breast-cancer-images/">Click Me</a>. </font>
+        <div class="plan-section" id="planSection">
+            <h2 style="color: #667eea; margin: 30px 0 20px;">A Little Itinerary</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>5:00 PM - Meet Up at WTC Subway/Mall Station</h3>
+                    <p>I'll meet you there</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>5:00 PM - Mercer Labs</h3>
+                    <p>21 Dey Street, Financial District<br>
+                    <a href="https://tickets.mercerlabs.com/event/maestros-and-the-machines-h3a6ne" target="_blank" style="color: #667eea; font-weight: bold;">View Event Details →</a></p>
+                </div>
+                <div class="timeline-item">
+                    <h3>7:30 PM - Dinner at Malt House</h3>
+                    <p> Close by with good vibes; new place to try</p>
+                </div>
+                
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-6">
-    <font size="+1">Net-Hack Hackathon 2022 at APL.</font>
-     <p>Project poster: <a href="NetHack_2022.pdf">Click Me</a>.</p>
-     <img style='border:1px solid #000000' src="NetHack_2022.jpg" 
-      width="700" 
-      height="500" /
+    <script>
 
-      <br>
-      <br>
-      <br>
+        function sayYes() {
+            const response = document.getElementById('response');
+            const planSection = document.getElementById('planSection');
+            const buttons = document.getElementById('buttons');
+            
+            response.innerHTML = "🎉 Yay! ";
+            buttons.style.display = 'none';
+            planSection.classList.add('show');
+            
+            // Create celebration hearts
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = '💙';
+                    heart.style.position = 'fixed';
+                    heart.style.left = Math.random() * 100 + 'vw';
+                    heart.style.top = '100vh';
+                    heart.style.fontSize = '30px';
+                    heart.style.zIndex = '1000';
+                    heart.style.transition = 'all 2s ease-out';
+                    document.body.appendChild(heart);
+                    
+                    setTimeout(() => {
+                        heart.style.top = '-100px';
+                        heart.style.opacity = '0';
+                    }, 100);
+                    
+                    setTimeout(() => heart.remove(), 2100);
+                }, i * 100);
+            }
+        }
 
-      <font size="+1"> Description: </font>
-      <br>
-      <br>
-      <font size="-1"> Participated in a 36-hour Hackathon. Developed a project proposal about Healthcare Supply Chain Networks and Infrastructure using Python and Graph Theory. 
-        Conducted literature review and developed an infrastructure model to combat PPE storages during Pandemics in the United States.  
-      </font>
-      <br>
-      <br>
-      <font size="+1"> Deliverables: </font>
-      <br>
-      <br>
-      <font size="'-1"> 1. Presented work at Net-Hack Poster Session.</font>
-      <br>
-      <font size="'-1"> 2. Placed 3rd overall in the Pandemic Mitigation and Disease Modeling category. </font>
-    </div>
-    </div>
-    <br>
-    <br>
-    <hr>
-    <div class="row">
-      <div class="col-md-6"> 
-      <font size="+1">Predictive Analytics for Covid-19.</font>
-      <p>Project poster: <a href="PAC_project.pdf">Click Me</a>.</p>
-  
-      <img style='border:1px solid #000000' src="PAC_project.jpg" 
-       width="700" 
-       height="500" />
-      <br>
-      <br>
-      <font size="+1"> Deliverables: </font>
-      <br>
-      <br>
-      <font size="'-1"> 1. Placed 4th overall in the Technical Training Project Competition at APL.</font>
-      </div>
-      <div class="col-md-6">
-       
-      <font size="+1">SIRD Disease Modeling and Prediction.</font>
-  
-       <p>Project poster: <a href="SIRD_project.pdf">Click Me</a>.</p>
-       <img style='border:1px solid #000000' src="Slide1.JPG" 
-        width="700" 
-        height="500" />
-        <br>
-        <br>
-  
-      </div>
-  
-      </div>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="w3-container w3-padding-32" id="contact">
-    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact</h3>
-    <p>Email: kpate111@jhu.edu.</p>
-    <p>Phone: 551-666-2355.</p>
-    <p>Linkedin: <a href="https://www.linkedin.com/in/krutalpatel/">https://www.linkedin.com/in/krutalpatel/</a> </p>
-    <br>
-    </div>
-  
-<!-- Footer -->
-<footer class="w3-center w3-black w3-padding-16">
-  <p>Powered by <a title="Krutal Patel" target="_blank" class="w3-hover-text-green">Krutalp</a></p>
-</footer>
-
+        function sayNo() {
+            const response = document.getElementById('response');
+            const messages = [
+                "Are you sure? 🥺",
+                "Please reconsider? 💙",
+                "I promise it'll be fun! ✨",
+                "One more chance?"
+            ];
+            response.innerHTML = messages[Math.floor(Math.random() * messages.length)];
+        }
+    </script>
 </body>
 </html>
